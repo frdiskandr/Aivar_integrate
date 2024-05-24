@@ -23,7 +23,7 @@ function App() {
     console.log({ groq_ai });
     setUserInput ('');
   }
-  //alert('Aivar: Mulai? ');
+  alert('Aivar: Mulai? ');
 
 
   return (
