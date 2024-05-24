@@ -21,6 +21,7 @@ function App() {
     setdata(groq_ai);
     console.log(userInput);
     console.log({ groq_ai });
+    setUserInput ('');
   }
   //alert('Aivar: Mulai? ');
 
@@ -42,13 +43,7 @@ function App() {
           </div>
           <div className='nav-bar'>
             <ul>
-              <li><a href="">Home</a></li>
-            </ul>
-            <ul>
-              <li><a href="">Aivar_AI</a></li>
-            </ul>
-            <ul>
-              <li><a href="">Info</a></li>
+              <li><a href="">Service</a></li>
             </ul>
           </div>
         </div>
@@ -89,11 +84,12 @@ function App() {
         <form>
           <input type="text" id="userInput" value={userInput}
             onChange={change} placeholder='Ask me anything' />
-          <button type="button" onClick={Click} onDragEnter={Click} className='submit'>Submit</button>
+          <button type="button" onClick={Click}  className='submit'>Submit</button>
         </form>
         <div>
+          <h6 style={{ textAlign: 'start' }}>{userInput}</h6>
           <SyntaxHighlighter language='swift' style={atomDark} wrapLongLines={true}>
-            {data}
+            {data} 
           </SyntaxHighlighter>
         </div>
 
