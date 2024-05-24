@@ -126,9 +126,11 @@ main{
 .head-content p{
     text-align: start;
 }
-
+.arrow{
+    box-sizing: border-box;
+}
 h3 {
-    font-size: 3rem;
+    /* font-size: 3rem;
     line-height: 80%;
     transform: rotateX(0) rotateY(-25deg);
     text-transform: uppercase;
@@ -139,11 +141,15 @@ h3 {
     margin: 3rem auto;
     position: relative;
     box-sizing: border-box;
-    padding: 2rem 0 9rem;
+    padding: 2rem 0 9rem; */
+    margin: 2rem;
+    padding-top: 5em;
+    padding-bottom: 3em;
+    font-size: 3rem;
     text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #228dff, 0 0 35px #228dff, 0 0 40px #228dff;
 
     span {
-        display: inline-block;
+        /* display: inline-block; */
     }
 
     span:first-child {
@@ -178,6 +184,12 @@ h3 {
     padding: 2em;
     margin-top: 10px;
 }
+.Ai h1{
+    text-shadow: 2px 2px 0.2em royalblue;
+}
+.Ai b{
+    color: lightblue;
+}
 form{
     display: flex;
     flex-direction: column;
@@ -187,18 +199,17 @@ form{
 }
 #userInput {
     padding: 1em;
+    color: black;
+    background-color: antiquewhite;
+    border-radius: 10px;
     font-size: 1rem;
     width: 80%;
-    box-sizing: border-box;
-    border: none;
-    border-radius: 10px;
+    text-align: center;
+    margin-bottom: 1em;
     -webkit-border-radius: 10px;
     -moz-border-radius: 10px;
     -ms-border-radius: 10px;
     -o-border-radius: 10px;
-    text-align: center;
-    margin-bottom: 1em;
-    outline: none;
 }
 .submit{
     padding: 0.5em;
@@ -231,6 +242,7 @@ form{
     background-color: lightcoral;
     color: black;
     box-shadow: 0 0 10px lightblue;
+    width: 100%;
 }
 
 
@@ -325,6 +337,7 @@ form{
 .information-container{
     padding: 10px;
     width: auto;
+    margin-top: 22em;
 }
 .head-information{
     margin-top: 20rem;
@@ -349,4 +362,16 @@ form{
     margin: 20px;
     padding: 5px;
     border-top: 1px solid whitesmoke ;
+}
+.Ai b{
+    color: lightcoral;
+}
+.Ai img{
+    width: 20%;
+    height: 20%;
+    border-radius: 20px;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    -ms-border-radius: 20px;
+    -o-border-radius: 20px;
 }
