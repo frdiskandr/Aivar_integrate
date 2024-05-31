@@ -369,9 +369,24 @@ form{
 .Ai img{
     width: 20%;
     height: 20%;
+    margin-bottom: 1em;
     border-radius: 20px;
     -webkit-border-radius: 20px;
     -moz-border-radius: 20px;
     -ms-border-radius: 20px;
     -o-border-radius: 20px;
+    transition: 2s;
+    -webkit-transition: 2s;
+    -moz-transition: 2s;
+    -ms-transition: 2s;
+    -o-transition: 2s;
+}
+.Ai img:hover{
+    width: 50%;
+    box-shadow: 0px 5px 15px lightblue, 0px 5px 15px lightblue;
+}
+
+.outputprom{
+    border: 2px solid white;
+    box-shadow: 0px 5px 15px lightcoral;
 }

@@ -1,6 +1,6 @@
 import './App.css'
 import Calculator from './calculate'
-import { useState } from 'react'
+import { useEffect,useState } from 'react'
 import { requestTogroq } from './Util/groq'
 import { Light as SyntaxHighlighter } from "react-syntax-highlighter"
 import { atomDark } from "react-syntax-highlighter/dist/cjs/styles/prism"
@@ -10,8 +10,8 @@ import image from './image/aivar.jpg'
 function App() {
 
   const [data, setdata] = useState("");
-
   const [userInput, setUserInput] = useState("");
+
 
   const change = (e) => {
     setUserInput(e.target.value);
@@ -19,10 +19,27 @@ function App() {
   const Click = async () => {
     const groq_ai = await requestTogroq(userInput);
     setdata(groq_ai);
-    console.log(userInput);
-    console.log({ groq_ai });
-    setUserInput ('');
+    setUserInput('');
   }
+
+  let output = data;
+  console.log(output);
+
+  const [display, setdisplay] = useState('');
+  
+  useEffect(() => {
+    let index = 0;
+    const inteval = setInterval(() => {
+      setdisplay(output.slice(0, index));
+      index += 1;
+      if (index > output.length) {
+        clearInterval(inteval);
+      }
+    }, 2);
+
+    return () => clearInterval(inteval);
+  }, [output]);
+  
   //alert('Aivar: Mulai? ');
 
 
@@ -82,14 +99,14 @@ function App() {
         <h1>Ai <b>Var</b></h1>
 
         <form>
-          <input type="text" id="userInput" value={userInput}
+          <input type="text" id="userInput" value={userInput} 
             onChange={change} placeholder='Ask me anything' />
           <button type="button" onClick={Click}  className='submit'>Submit</button>
         </form>
         <div>
           <h6 style={{ textAlign: 'start' }}>{userInput}</h6>
-          <SyntaxHighlighter language='swift' style={atomDark} wrapLongLines={true}>
-            {data} 
+          <SyntaxHighlighter language='swift' style={atomDark} wrapLongLines={true} className="outputprom">
+            {display} 
           </SyntaxHighlighter>
         </div>
 
