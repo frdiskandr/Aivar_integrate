@@ -11,15 +11,18 @@ function App() {
 
   const [data, setdata] = useState("");
   const [userInput, setUserInput] = useState("");
+  const [Ainame, setAiname] = useState('');
 
 
   const change = (e) => {
     setUserInput(e.target.value);
+    setAiname('');
   }
   const Click = async () => {
     const groq_ai = await requestTogroq(userInput);
     setdata(groq_ai);
     setUserInput('');
+    setAiname('Aivar :');
   }
 
   let output = data;
@@ -104,7 +107,7 @@ function App() {
           <button type="button" onClick={Click}  className='submit'>Submit</button>
         </form>
         <div>
-          <h6 style={{ textAlign: 'start' }}>{userInput}</h6>
+          <h6 style={{ textAlign: 'start' }}>{userInput + Ainame}</h6>
           <SyntaxHighlighter language='swift' style={atomDark} wrapLongLines={true} className="outputprom">
             {display} 
           </SyntaxHighlighter>

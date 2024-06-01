@@ -14,7 +14,7 @@ export const requestTogroq = async (userInput) => {
             role: "user",
             content: userInput,
         }],
-        model: "llama3-8b-8192",
+        model: "llama3-70b-8192",
     });
     return replay.choices[0].message.content;
 };

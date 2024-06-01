@@ -69,25 +69,13 @@ main{
     text-decoration: none;
     font-size: 1rem;
     line-height: 1;
-    animation: neon .08s ease-in-out infinite alternate;
-    transition: 1.5s;
-    -webkit-animation: neon .08s ease-in-out infinite alternate;
-    -webkit-transition: 1.5s;
-    -moz-transition: 1.5s;
-    -ms-transition: 1.5s;
-    -o-transition: 1.5s;
 }
 
 .nav-bar a:hover{
     color: white;
     background-color: black;
-    border: #c6e2ff solid 0.1em;
-    border-radius: 10%;
     text-shadow: 1px 1px 2em royalblue;
-    -webkit-border-radius: 10%;
-    -moz-border-radius: 10%;
-    -ms-border-radius: 10%;
-    -o-border-radius: 10%;
+    animation: neon .08s ease-in-out infinite alternate;
 }
 
 @keyframes neon {
